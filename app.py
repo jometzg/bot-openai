@@ -26,6 +26,10 @@ app = Flask(__name__)
 # Bot configuration
 MICROSOFT_APP_ID = os.getenv("MICROSOFT_APP_ID", "")
 MICROSOFT_APP_PASSWORD = os.getenv("MICROSOFT_APP_PASSWORD", "")
+print("MICROSOFT_APP_ID")
+print(MICROSOFT_APP_ID)
+print("MICROSOFT_APP_PASSWORD")
+print(MICROSOFT_APP_PASSWORD)
 SETTINGS = BotFrameworkAdapterSettings(MICROSOFT_APP_ID, MICROSOFT_APP_PASSWORD)
 ADAPTER = BotFrameworkAdapter(SETTINGS)
 BOT = MyBot()
@@ -48,5 +52,5 @@ async def messages():
     return Response(status=201)
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 3978))
-    app.run(host="0.0.0.0", port=port)
+   port = int(os.environ.get("PORT", 3978))
+   app.run(host="0.0.0.0", port=port)
