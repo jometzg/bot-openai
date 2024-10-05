@@ -13,11 +13,11 @@ ENV PORT=3978
 WORKDIR /app
 
 # Copy the requirements.txt file into the container
-COPY req2.txt /app/
+COPY requirements.txt /app/
 
 # Install the dependencies
 RUN pip install --upgrade pip
-RUN pip install -r req2.txt
+RUN pip install -r requirements.txt
 
 # Copy the rest of the application code into the container
 COPY . /app/
