@@ -6,10 +6,12 @@
 import os
 from botbuilder.core import ActivityHandler, TurnContext
 from botbuilder.schema import ChannelAccount
+from openai import get_openai_response
 
 class MyBot(ActivityHandler):
     async def on_message_activity(self, turn_context: TurnContext):
-         await turn_context.send_activity(f"You said: {turn_context.activity.text}")
+        response = get_openai_response(turn_context.activity.text)
+        await turn_context.send_activity(response)
 
     async def on_members_added_activity(self, members_added: [ChannelAccount], turn_context: TurnContext):
         for member in members_added:
@@ -20,6 +22,7 @@ class MyBot(ActivityHandler):
 from flask import Flask, request, Response
 from botbuilder.core import BotFrameworkAdapter, BotFrameworkAdapterSettings
 from botbuilder.schema import Activity
+from openai import get_openai_response
 
 app = Flask(__name__)
 
