@@ -1,5 +1,6 @@
-# bot-openai
-An OpenAI bot for Teams integration
+# Teams bot that uses Azure OpenAI to answer questions
+
+An OpenAI bot for Teams integration. Presents itself as a Teams channel.
 
 ### Run locally 
 
@@ -21,3 +22,8 @@ e.g.
 ```
 https://jjbotcont-ddddd.westeurope-01.azurewebsites.net/api/messages
 ```
+## ToDo
+1. system message
+2. chat history
+3. own data
+4. intent gathering and potentially more than one agent e.g. one for HR docs and one for another department
